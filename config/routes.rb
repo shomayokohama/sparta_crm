@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   resources :customers
   post '/comments' => 'comments#create'
+  delete '/comments/:id' => 'comments#destroy',as: :comment
   root 'customers#index'
   devise_for :users
   # get 'customers/index'
